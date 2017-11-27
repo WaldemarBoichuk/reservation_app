@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Food Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Type</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @food_items.each do |food_item| %>
+      <tr>
+        <td><%= food_item.name %></td>
+        <td><%= food_item.price %></td>
+        <td><%= food_item.food_type %></td>
+         <td><%= link_to 'Show', food_item %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Place an order', new_order_path %>
